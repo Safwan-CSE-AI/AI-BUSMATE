@@ -27,9 +27,9 @@ export default function StopSelect({
   }, []);
 
   const filteredStops = stops.filter(s => 
-    s.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    s.locality.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    s.code.toLowerCase().includes(searchTerm.toLowerCase())
+    (s.name && s.name.toLowerCase().includes(searchTerm.toLowerCase())) ||
+    (s.locality && s.locality.toLowerCase().includes(searchTerm.toLowerCase())) ||
+    (s.code && s.code.toLowerCase().includes(searchTerm.toLowerCase()))
   );
 
   return (

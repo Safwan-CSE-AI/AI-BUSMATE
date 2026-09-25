@@ -293,42 +293,118 @@ export const dbService = {
           supabase.from('favorite_places').select('*, bus_stops(*)').eq('user_id', userId),
           supabase.from('favorite_routes').select('*, bus_routes(*)').eq('user_id', userId)
         ]);
-        if (!placesRes.error && placesRes.data) places = placesRes.data;
-        if (!routesRes.error && routesRes.data) routes = routesRes.data;
+        if (!placesRes.error && placesRes.data && placesRes.data.length > 0) {
+          places = placesRes.data.map(p => {
+            const stop = p.bus_stops || memStore.stops.find(s => s.id === p.stop_id || s.name === p.stop_id);
+            return { ...p, stop };
+          });
+        }
+        if (!routesRes.error && routesRes.data && routesRes.data.length > 0) {
+          routes = routesRes.data.map(r => {
+            const fromStop = memStore.stops.find(s => s.id === r.from_stop_id || s.name === r.from_stop_id);
+            const toStop = memStore.stops.find(s => s.id === r.to_stop_id || s.name === r.to_stop_id);
+            return {
+              ...r,
+              from_stop_name: fromStop?.name || r.from_stop_id,
+              to_stop_name: toStop?.name || r.to_stop_id
+            };
+          });
+        }
       } catch (e) {
         // fallback
       }
     }
 
     if (places.length === 0) {
-      places = memStore.favoritePlaces
-        .filter(p => p.user_id === userId)
-        .map(p => {
-          const stop = memStore.stops.find(s => s.id === p.stop_id);
-          return { ...p, stop };
-        });
+      let userPlaces = memStore.favoritePlaces.filter(p => p.user_id === userId);
+      
+      // If user has no saved places yet, initialize starter favorites for Mangalore
+      if (userPlaces.length === 0) {
+        const starterPlaces = [
+          {
+            id: generateId(),
+            user_id: userId,
+            label: 'Home',
+            stop_id: 'b0000001-0000-0000-0000-000000000025', // Kunjathbail
+            custom_name: 'Home (Kunjathbail)',
+            icon: 'Home',
+            created_at: new Date().toISOString()
+          },
+          {
+            id: generateId(),
+            user_id: userId,
+            label: 'University / College',
+            stop_id: 'b0000001-0000-0000-0000-000000000011', // NITK Surathkal
+            custom_name: 'NITK Surathkal Campus',
+            icon: 'GraduationCap',
+            created_at: new Date().toISOString()
+          },
+          {
+            id: generateId(),
+            user_id: userId,
+            label: 'Central Transit Hub',
+            stop_id: 'b0000001-0000-0000-0000-000000000001', // State Bank
+            custom_name: 'State Bank Service Bus Stand',
+            icon: 'Building',
+            created_at: new Date().toISOString()
+          }
+        ];
+        memStore.favoritePlaces.push(...starterPlaces);
+        userPlaces = starterPlaces;
+      }
+
+      places = userPlaces.map(p => {
+        const stop = memStore.stops.find(s => s.id === p.stop_id || s.name === p.stop_id);
+        return { ...p, stop };
+      });
     }
 
     if (routes.length === 0) {
-      routes = memStore.favoriteRoutes
-        .filter(r => r.user_id === userId)
-        .map(r => {
-          const route = memStore.routes.find(rt => rt.id === r.route_id);
-          const fromStop = memStore.stops.find(s => s.id === r.from_stop_id);
-          const toStop = memStore.stops.find(s => s.id === r.to_stop_id);
-          return { ...r, route, from_stop_name: fromStop?.name, to_stop_name: toStop?.name };
-        });
+      let userRoutes = memStore.favoriteRoutes.filter(r => r.user_id === userId);
+
+      // If user has no saved routes yet, initialize starter favorite route
+      if (userRoutes.length === 0) {
+        const starterRoutes = [
+          {
+            id: generateId(),
+            user_id: userId,
+            route_id: 'r0000001-0000-0000-0000-000000000013',
+            from_stop_id: 'b0000001-0000-0000-0000-000000000025', // Kunjathbail
+            to_stop_id: 'b0000001-0000-0000-0000-000000000001', // State Bank
+            custom_label: 'Bus 13: Kunjathbail to State Bank Express',
+            created_at: new Date().toISOString()
+          }
+        ];
+        memStore.favoriteRoutes.push(...starterRoutes);
+        userRoutes = starterRoutes;
+      }
+
+      routes = userRoutes.map(r => {
+        const route = memStore.routes.find(rt => rt.id === r.route_id);
+        const fromStop = memStore.stops.find(s => s.id === r.from_stop_id || s.name === r.from_stop_id);
+        const toStop = memStore.stops.find(s => s.id === r.to_stop_id || s.name === r.to_stop_id);
+        return {
+          ...r,
+          route,
+          from_stop_name: fromStop?.name || r.from_stop_id,
+          to_stop_name: toStop?.name || r.to_stop_id
+        };
+      });
     }
 
     return { places, routes };
   },
 
   async addFavoritePlace(userId, { label, stop_id, custom_name, icon = 'MapPin' }) {
+    // Resolve stop by ID or name
+    const foundStop = memStore.stops.find(s => s.id === stop_id || s.name?.toLowerCase() === stop_id?.toLowerCase());
+    const validStopId = foundStop ? foundStop.id : stop_id;
+
     const newPlace = {
       id: generateId(),
       user_id: userId,
       label,
-      stop_id,
+      stop_id: validStopId,
       custom_name: custom_name || label,
       icon,
       created_at: new Date().toISOString()
@@ -336,37 +412,40 @@ export const dbService = {
     if (hasSupabase) {
       try {
         const { data, error } = await supabase.from('favorite_places').insert([newPlace]).select().single();
-        if (!error && data) return data;
+        if (!error && data) return { ...data, stop: foundStop };
       } catch (e) {
         // fallback
       }
     }
     memStore.favoritePlaces.push(newPlace);
-    const stop = memStore.stops.find(s => s.id === stop_id);
-    return { ...newPlace, stop };
+    return { ...newPlace, stop: foundStop };
   },
 
   async addFavoriteRoute(userId, { route_id, from_stop_id, to_stop_id, custom_label }) {
+    // Resolve stop IDs if stop names were passed
+    const fromStop = memStore.stops.find(s => s.id === from_stop_id || s.name?.toLowerCase() === from_stop_id?.toLowerCase());
+    const toStop = memStore.stops.find(s => s.id === to_stop_id || s.name?.toLowerCase() === to_stop_id?.toLowerCase());
+    const validFromId = fromStop ? fromStop.id : from_stop_id;
+    const validToId = toStop ? toStop.id : to_stop_id;
+
     const newRoute = {
       id: generateId(),
       user_id: userId,
       route_id,
-      from_stop_id,
-      to_stop_id,
-      custom_label,
+      from_stop_id: validFromId,
+      to_stop_id: validToId,
+      custom_label: custom_label || `${fromStop?.name || validFromId} ➔ ${toStop?.name || validToId}`,
       created_at: new Date().toISOString()
     };
     if (hasSupabase) {
       try {
         const { data, error } = await supabase.from('favorite_routes').insert([newRoute]).select().single();
-        if (!error && data) return data;
+        if (!error && data) return { ...data, from_stop_name: fromStop?.name, to_stop_name: toStop?.name };
       } catch (e) {
         // fallback
       }
     }
     memStore.favoriteRoutes.push(newRoute);
-    const fromStop = memStore.stops.find(s => s.id === from_stop_id);
-    const toStop = memStore.stops.find(s => s.id === to_stop_id);
     const route = memStore.routes.find(r => r.id === route_id);
     return { ...newRoute, route, from_stop_name: fromStop?.name, to_stop_name: toStop?.name };
   },
