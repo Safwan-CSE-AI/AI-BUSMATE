@@ -1,6 +1,7 @@
 // ==============================================================================
 // AI BusMate - Authentic Mangalore (Mangaluru / Kudla) Transit Network Dataset
-// Comprehensive Coverage of 24 Stops, 12 Iconic Routes, Sequences, Schedules & Fares
+// Comprehensive Coverage of 42 Stops, 22 Iconic Routes, Sequences, Schedules & Fares
+// Full Coverage: State Bank, Kunjathbail/Kunjethbail, Kavoor, Ladyhill, Surathkal, Konaje, Airport & more!
 // ==============================================================================
 
 export const initialStops = [
@@ -267,11 +268,212 @@ export const initialStops = [
     longitude: 74.8560,
     wheelchair_accessible: true,
     is_active: true
+  },
+
+  // --- EXPANDED AUTHENTIC MANGALORE STOPS ---
+  {
+    id: 'b0000001-0000-0000-0000-000000000025',
+    code: 'KJB-25',
+    name: 'Kunjathbail / Kunjethbail (Main Bus Stand)',
+    locality: 'Kunjathbail / Kunjethbail',
+    landmark: 'Near Kunjathbail Ganesha Temple & Main Bus Shelter',
+    latitude: 12.9345,
+    longitude: 74.8562,
+    wheelchair_accessible: true,
+    is_active: true
+  },
+  {
+    id: 'b0000001-0000-0000-0000-000000000026',
+    code: 'KVR-26',
+    name: 'Kavoor Junction',
+    locality: 'Kavoor',
+    landmark: 'Kavoor Mahalingeshwara Temple & Police Station',
+    latitude: 12.9248,
+    longitude: 74.8540,
+    wheelchair_accessible: true,
+    is_active: true
+  },
+  {
+    id: 'b0000001-0000-0000-0000-000000000027',
+    code: 'UWS-27',
+    name: 'Urwa Stores Circle',
+    locality: 'Urwa Stores',
+    landmark: 'Urwa Market & Canara High School',
+    latitude: 12.8980,
+    longitude: 74.8350,
+    wheelchair_accessible: true,
+    is_active: true
+  },
+  {
+    id: 'b0000001-0000-0000-0000-000000000028',
+    code: 'LDH-28',
+    name: 'Ladyhill Circle (Narayana Guru Circle)',
+    locality: 'Ladyhill',
+    landmark: 'Brahmashree Narayana Guru Statue & Ladyhill School',
+    latitude: 12.8885,
+    longitude: 74.8360,
+    wheelchair_accessible: true,
+    is_active: true
+  },
+  {
+    id: 'b0000001-0000-0000-0000-000000000029',
+    code: 'CST-29',
+    name: 'Car Street (Sri Venkataramana Temple)',
+    locality: 'Car Street',
+    landmark: 'Historic Temple Square & Flower Market',
+    latitude: 12.8712,
+    longitude: 74.8385,
+    wheelchair_accessible: true,
+    is_active: true
+  },
+  {
+    id: 'b0000001-0000-0000-0000-000000000030',
+    code: 'MNG-30',
+    name: 'Mannagudda Circle',
+    locality: 'Mannagudda',
+    landmark: 'Near Sanghanikethan & Kudroli Temple road',
+    latitude: 12.8780,
+    longitude: 74.8340,
+    wheelchair_accessible: true,
+    is_active: true
+  },
+  {
+    id: 'b0000001-0000-0000-0000-000000000031',
+    code: 'CHL-31',
+    name: 'Chilimbi Junction',
+    locality: 'Chilimbi',
+    landmark: 'Chilimbi Bus Shelter & City Hospital Annexe',
+    latitude: 12.8920,
+    longitude: 74.8335,
+    wheelchair_accessible: true,
+    is_active: true
+  },
+  {
+    id: 'b0000001-0000-0000-0000-000000000032',
+    code: 'DRB-32',
+    name: 'Derebail Church / Konchady',
+    locality: 'Derebail / Konchady',
+    landmark: 'Derebail Most Holy Redeemer Church & Airport Road',
+    latitude: 12.9120,
+    longitude: 74.8480,
+    wheelchair_accessible: true,
+    is_active: true
+  },
+  {
+    id: 'b0000001-0000-0000-0000-000000000033',
+    code: 'BND-33',
+    name: 'Bondel Junction',
+    locality: 'Bondel',
+    landmark: 'Bondel Church & MGC High School',
+    latitude: 12.9260,
+    longitude: 74.8690,
+    wheelchair_accessible: true,
+    is_active: true
+  },
+  {
+    id: 'b0000001-0000-0000-0000-000000000034',
+    code: 'MYH-34',
+    name: 'Maryhill / Helipad',
+    locality: 'Maryhill',
+    landmark: 'Maryhill Police Grounds & Helipad',
+    latitude: 12.9090,
+    longitude: 74.8640,
+    wheelchair_accessible: true,
+    is_active: true
+  },
+  {
+    id: 'b0000001-0000-0000-0000-000000000035',
+    code: 'NTR-35',
+    name: 'Nanthoor Circle',
+    locality: 'Nanthoor',
+    landmark: 'NH 66 & NH 73 Interchange Circle',
+    latitude: 12.8765,
+    longitude: 74.8670,
+    wheelchair_accessible: true,
+    is_active: true
+  },
+  {
+    id: 'b0000001-0000-0000-0000-000000000036',
+    code: 'VMJ-36',
+    name: 'Vamanjoor (SJEC Campus)',
+    locality: 'Vamanjoor',
+    landmark: 'St. Joseph Engineering College & Pilikula Nisargadhama',
+    latitude: 12.9110,
+    longitude: 74.8980,
+    wheelchair_accessible: true,
+    is_active: true
+  },
+  {
+    id: 'b0000001-0000-0000-0000-000000000037',
+    code: 'MGD-37',
+    name: 'Mangaladevi Temple',
+    locality: 'Bolar / Mangaladevi',
+    landmark: 'Historic Mangaladevi Temple Gate',
+    latitude: 12.8490,
+    longitude: 74.8430,
+    wheelchair_accessible: true,
+    is_active: true
+  },
+  {
+    id: 'b0000001-0000-0000-0000-000000000038',
+    code: 'MKA-38',
+    name: 'Mukka (Srinivas Institute)',
+    locality: 'Mukka',
+    landmark: 'Srinivas Hospital & Medical College Campus',
+    latitude: 13.0320,
+    longitude: 74.7890,
+    wheelchair_accessible: true,
+    is_active: true
+  },
+  {
+    id: 'b0000001-0000-0000-0000-000000000039',
+    code: 'KTP-39',
+    name: 'Katipalla Kaikamba',
+    locality: 'Katipalla',
+    landmark: 'Katipalla Main Market Junction',
+    latitude: 12.9980,
+    longitude: 74.8210,
+    wheelchair_accessible: true,
+    is_active: true
+  },
+  {
+    id: 'b0000001-0000-0000-0000-000000000040',
+    code: 'TNB-40',
+    name: 'Thannirbhavi Beach Gate',
+    locality: 'Thannirbhavi',
+    landmark: 'Tree Park & Beach Concourse',
+    latitude: 12.9000,
+    longitude: 74.8150,
+    wheelchair_accessible: true,
+    is_active: true
+  },
+  {
+    id: 'b0000001-0000-0000-0000-000000000041',
+    code: 'BJP-41',
+    name: 'Bajpe Central Market',
+    locality: 'Bajpe',
+    landmark: 'Bajpe Central Circle & Daily Market',
+    latitude: 12.9690,
+    longitude: 74.8810,
+    wheelchair_accessible: true,
+    is_active: true
+  },
+  {
+    id: 'b0000001-0000-0000-0000-000000000042',
+    code: 'MKD-42',
+    name: 'Marakada Junction',
+    locality: 'Marakada',
+    landmark: 'Near Airport Road Marakada Bridge',
+    latitude: 12.9420,
+    longitude: 74.8650,
+    wheelchair_accessible: true,
+    is_active: true
   }
 ];
 
-// 12 Authentic Iconic Mangalore Bus Routes
+// Authentic Iconic Mangalore Bus Routes (Outbound & Inbound Return Pairs)
 export const initialRoutes = [
+  // 1. Route 15: State Bank ➔ Surathkal NITK Express
   {
     id: 'r0000001-0000-0000-0000-000000000001',
     route_number: '15',
@@ -283,6 +485,7 @@ export const initialRoutes = [
     estimated_duration_mins: 45,
     is_active: true
   },
+  // 2. Route 11: State Bank ➔ Mangalore University (Konaje)
   {
     id: 'r0000001-0000-0000-0000-000000000002',
     route_number: '11',
@@ -294,6 +497,7 @@ export const initialRoutes = [
     estimated_duration_mins: 42,
     is_active: true
   },
+  // 3. Route 42: State Bank ➔ Mudipu Infosys IT SEZ
   {
     id: 'r0000001-0000-0000-0000-000000000003',
     route_number: '42',
@@ -305,6 +509,7 @@ export const initialRoutes = [
     estimated_duration_mins: 50,
     is_active: true
   },
+  // 4. Route 27: State Bank ➔ Airport (Bajpe / IXE)
   {
     id: 'r0000001-0000-0000-0000-000000000004',
     route_number: '27',
@@ -316,6 +521,7 @@ export const initialRoutes = [
     estimated_duration_mins: 38,
     is_active: true
   },
+  // 5. Route 24A: State Bank ➔ Kottara Chowki Direct
   {
     id: 'r0000001-0000-0000-0000-000000000005',
     route_number: '24A',
@@ -327,6 +533,7 @@ export const initialRoutes = [
     estimated_duration_mins: 22,
     is_active: true
   },
+  // 6. Route 19: State Bank ➔ Panambur Beach
   {
     id: 'r0000001-0000-0000-0000-000000000006',
     route_number: '19',
@@ -338,6 +545,7 @@ export const initialRoutes = [
     estimated_duration_mins: 28,
     is_active: true
   },
+  // 7. Route 3A: State Bank ➔ Kadri Hills & Temple
   {
     id: 'r0000001-0000-0000-0000-000000000007',
     route_number: '3A',
@@ -349,6 +557,7 @@ export const initialRoutes = [
     estimated_duration_mins: 18,
     is_active: true
   },
+  // 8. Route 44: State Bank ➔ Ullal Rani Abbakka Circle
   {
     id: 'r0000001-0000-0000-0000-000000000008',
     route_number: '44',
@@ -360,6 +569,7 @@ export const initialRoutes = [
     estimated_duration_mins: 30,
     is_active: true
   },
+  // 9. Route 22: State Bank ➔ Mangalore Junction Railway (MAJN)
   {
     id: 'r0000001-0000-0000-0000-000000000009',
     route_number: '22',
@@ -371,6 +581,7 @@ export const initialRoutes = [
     estimated_duration_mins: 20,
     is_active: true
   },
+  // 10. Route 33: KSRTC Bejai ➔ Mangalore University (via Pumpwell)
   {
     id: 'r0000001-0000-0000-0000-000000000010',
     route_number: '33',
@@ -382,6 +593,7 @@ export const initialRoutes = [
     estimated_duration_mins: 40,
     is_active: true
   },
+  // 11. Route 16: Kottara Chowki ➔ Surathkal NITK Shuttle
   {
     id: 'r0000001-0000-0000-0000-000000000011',
     route_number: '16',
@@ -393,6 +605,7 @@ export const initialRoutes = [
     estimated_duration_mins: 25,
     is_active: true
   },
+  // 12. Route 47: Deralakatte Medical Hub ➔ Mudipu IT SEZ
   {
     id: 'r0000001-0000-0000-0000-000000000012',
     route_number: '47',
@@ -402,6 +615,127 @@ export const initialRoutes = [
     bus_type: 'City Standard',
     total_distance_km: 9.0,
     estimated_duration_mins: 20,
+    is_active: true
+  },
+
+  // 13. Route 1: State Bank ➔ Kunjathbail (DIRECT CITY LINE)
+  {
+    id: 'r0000001-0000-0000-0000-000000000013',
+    route_number: '1',
+    route_name: 'State Bank ➔ Kunjathbail (via Car Street, Ladyhill, Urwa Stores, Kavoor)',
+    origin_stop_id: 'b0000001-0000-0000-0000-000000000001',
+    destination_stop_id: 'b0000001-0000-0000-0000-000000000025',
+    bus_type: 'City Standard',
+    total_distance_km: 11.5,
+    estimated_duration_mins: 32,
+    is_active: true
+  },
+  // 14. Route 1 (Return): Kunjathbail ➔ State Bank Direct
+  {
+    id: 'r0000001-0000-0000-0000-000000000014',
+    route_number: '1',
+    route_name: 'Kunjathbail ➔ State Bank (via Kavoor, Urwa Stores, Ladyhill, Car Street)',
+    origin_stop_id: 'b0000001-0000-0000-0000-000000000025',
+    destination_stop_id: 'b0000001-0000-0000-0000-000000000001',
+    bus_type: 'City Standard',
+    total_distance_km: 11.5,
+    estimated_duration_mins: 32,
+    is_active: true
+  },
+  // 15. Route 13: State Bank ➔ Kunjathbail (via Bondel & Kavoor)
+  {
+    id: 'r0000001-0000-0000-0000-000000000015',
+    route_number: '13',
+    route_name: 'State Bank ➔ Kunjathbail (via Lalbagh, KSRTC, Derebail, Bondel, Kavoor)',
+    origin_stop_id: 'b0000001-0000-0000-0000-000000000001',
+    destination_stop_id: 'b0000001-0000-0000-0000-000000000025',
+    bus_type: 'City Standard',
+    total_distance_km: 12.8,
+    estimated_duration_mins: 35,
+    is_active: true
+  },
+  // 16. Route 13 (Return): Kunjathbail ➔ State Bank (via Bondel & KSRTC)
+  {
+    id: 'r0000001-0000-0000-0000-000000000016',
+    route_number: '13',
+    route_name: 'Kunjathbail ➔ State Bank (via Kavoor, Bondel, Derebail, KSRTC, Lalbagh)',
+    origin_stop_id: 'b0000001-0000-0000-0000-000000000025',
+    destination_stop_id: 'b0000001-0000-0000-0000-000000000001',
+    bus_type: 'City Standard',
+    total_distance_km: 12.8,
+    estimated_duration_mins: 35,
+    is_active: true
+  },
+  // 17. Route 2: State Bank ➔ Mukka Srinivas (via Baikampady & Surathkal)
+  {
+    id: 'r0000001-0000-0000-0000-000000000017',
+    route_number: '2',
+    route_name: 'State Bank ➔ Mukka Srinivas Hospital (via Surathkal)',
+    origin_stop_id: 'b0000001-0000-0000-0000-000000000001',
+    destination_stop_id: 'b0000001-0000-0000-0000-000000000038',
+    bus_type: 'City Express',
+    total_distance_km: 24.5,
+    estimated_duration_mins: 50,
+    is_active: true
+  },
+  // 18. Route 3B: State Bank ➔ Vamanjoor (SJEC / Pilikula)
+  {
+    id: 'r0000001-0000-0000-0000-000000000018',
+    route_number: '3B',
+    route_name: 'State Bank ➔ Vamanjoor SJEC (via Bunts Hostel, Mallikatta, Nanthoor)',
+    origin_stop_id: 'b0000001-0000-0000-0000-000000000001',
+    destination_stop_id: 'b0000001-0000-0000-0000-000000000036',
+    bus_type: 'City Standard',
+    total_distance_km: 11.0,
+    estimated_duration_mins: 28,
+    is_active: true
+  },
+  // 19. Route 27B: State Bank ➔ Mangaladevi Temple Direct
+  {
+    id: 'r0000001-0000-0000-0000-000000000019',
+    route_number: '27B',
+    route_name: 'State Bank ➔ Mangaladevi Temple (via Central Railway Station & Attavar)',
+    origin_stop_id: 'b0000001-0000-0000-0000-000000000001',
+    destination_stop_id: 'b0000001-0000-0000-0000-000000000037',
+    bus_type: 'City Standard',
+    total_distance_km: 3.5,
+    estimated_duration_mins: 12,
+    is_active: true
+  },
+  // 20. Route 45: State Bank ➔ Katipalla Kaikamba
+  {
+    id: 'r0000001-0000-0000-0000-000000000020',
+    route_number: '45',
+    route_name: 'State Bank ➔ Katipalla Kaikamba (via Surathkal Junction)',
+    origin_stop_id: 'b0000001-0000-0000-0000-000000000001',
+    destination_stop_id: 'b0000001-0000-0000-0000-000000000039',
+    bus_type: 'City Standard',
+    total_distance_km: 22.0,
+    estimated_duration_mins: 46,
+    is_active: true
+  },
+  // 21. Route 1A: State Bank ➔ Thannirbhavi Beach Concourse
+  {
+    id: 'r0000001-0000-0000-0000-000000000021',
+    route_number: '1A',
+    route_name: 'State Bank ➔ Thannirbhavi Beach Gate (via Ladyhill & Kulur)',
+    origin_stop_id: 'b0000001-0000-0000-0000-000000000001',
+    destination_stop_id: 'b0000001-0000-0000-0000-000000000040',
+    bus_type: 'City Standard',
+    total_distance_km: 10.5,
+    estimated_duration_mins: 25,
+    is_active: true
+  },
+  // 22. Route 19B: State Bank ➔ Bondel (via Ladyhill, Kottara, Kavoor)
+  {
+    id: 'r0000001-0000-0000-0000-000000000022',
+    route_number: '19B',
+    route_name: 'State Bank ➔ Bondel Junction (via Ladyhill, Urwa Stores, Kavoor)',
+    origin_stop_id: 'b0000001-0000-0000-0000-000000000001',
+    destination_stop_id: 'b0000001-0000-0000-0000-000000000033',
+    bus_type: 'City Standard',
+    total_distance_km: 11.8,
+    estimated_duration_mins: 30,
     is_active: true
   }
 ];
@@ -451,7 +785,9 @@ export const initialRouteStops = [
   { route_id: 'r0000001-0000-0000-0000-000000000004', stop_id: 'b0000001-0000-0000-0000-000000000004', stop_sequence: 2, distance_from_start_km: 3.5, time_from_start_mins: 10, is_major_interchange: false },
   { route_id: 'r0000001-0000-0000-0000-000000000004', stop_id: 'b0000001-0000-0000-0000-000000000005', stop_sequence: 3, distance_from_start_km: 5.0, time_from_start_mins: 14, is_major_interchange: true },
   { route_id: 'r0000001-0000-0000-0000-000000000004', stop_id: 'b0000001-0000-0000-0000-000000000006', stop_sequence: 4, distance_from_start_km: 7.8, time_from_start_mins: 20, is_major_interchange: true },
-  { route_id: 'r0000001-0000-0000-0000-000000000004', stop_id: 'b0000001-0000-0000-0000-000000000023', stop_sequence: 5, distance_from_start_km: 17.5, time_from_start_mins: 38, is_major_interchange: true },
+  { route_id: 'r0000001-0000-0000-0000-000000000004', stop_id: 'b0000001-0000-0000-0000-000000000026', stop_sequence: 5, distance_from_start_km: 10.5, time_from_start_mins: 26, is_major_interchange: true },
+  { route_id: 'r0000001-0000-0000-0000-000000000004', stop_id: 'b0000001-0000-0000-0000-000000000042', stop_sequence: 6, distance_from_start_km: 12.8, time_from_start_mins: 31, is_major_interchange: false },
+  { route_id: 'r0000001-0000-0000-0000-000000000004', stop_id: 'b0000001-0000-0000-0000-000000000023', stop_sequence: 7, distance_from_start_km: 17.5, time_from_start_mins: 38, is_major_interchange: true },
 
   // -------------------------------------------------------------
   // Route 24A: State Bank ➔ Kottara Chowki Direct
@@ -523,7 +859,114 @@ export const initialRouteStops = [
   // -------------------------------------------------------------
   { route_id: 'r0000001-0000-0000-0000-000000000012', stop_id: 'b0000001-0000-0000-0000-000000000015', stop_sequence: 1, distance_from_start_km: 0.0, time_from_start_mins: 0, is_major_interchange: true },
   { route_id: 'r0000001-0000-0000-0000-000000000012', stop_id: 'b0000001-0000-0000-0000-000000000016', stop_sequence: 2, distance_from_start_km: 5.5, time_from_start_mins: 12, is_major_interchange: true },
-  { route_id: 'r0000001-0000-0000-0000-000000000012', stop_id: 'b0000001-0000-0000-0000-000000000018', stop_sequence: 3, distance_from_start_km: 9.0, time_from_start_mins: 20, is_major_interchange: true }
+  { route_id: 'r0000001-0000-0000-0000-000000000012', stop_id: 'b0000001-0000-0000-0000-000000000018', stop_sequence: 3, distance_from_start_km: 9.0, time_from_start_mins: 20, is_major_interchange: true },
+
+  // -------------------------------------------------------------
+  // Route 1: State Bank ➔ Kunjathbail (DIRECT CITY LINE)
+  // -------------------------------------------------------------
+  { route_id: 'r0000001-0000-0000-0000-000000000013', stop_id: 'b0000001-0000-0000-0000-000000000001', stop_sequence: 1, distance_from_start_km: 0.0, time_from_start_mins: 0, is_major_interchange: true },
+  { route_id: 'r0000001-0000-0000-0000-000000000013', stop_id: 'b0000001-0000-0000-0000-000000000029', stop_sequence: 2, distance_from_start_km: 1.2, time_from_start_mins: 4, is_major_interchange: false },
+  { route_id: 'r0000001-0000-0000-0000-000000000013', stop_id: 'b0000001-0000-0000-0000-000000000030', stop_sequence: 3, distance_from_start_km: 2.2, time_from_start_mins: 7, is_major_interchange: false },
+  { route_id: 'r0000001-0000-0000-0000-000000000013', stop_id: 'b0000001-0000-0000-0000-000000000028', stop_sequence: 4, distance_from_start_km: 3.5, time_from_start_mins: 11, is_major_interchange: true },
+  { route_id: 'r0000001-0000-0000-0000-000000000013', stop_id: 'b0000001-0000-0000-0000-000000000031', stop_sequence: 5, distance_from_start_km: 4.5, time_from_start_mins: 14, is_major_interchange: false },
+  { route_id: 'r0000001-0000-0000-0000-000000000013', stop_id: 'b0000001-0000-0000-0000-000000000027', stop_sequence: 6, distance_from_start_km: 5.6, time_from_start_mins: 18, is_major_interchange: true },
+  { route_id: 'r0000001-0000-0000-0000-000000000013', stop_id: 'b0000001-0000-0000-0000-000000000006', stop_sequence: 7, distance_from_start_km: 7.2, time_from_start_mins: 23, is_major_interchange: true },
+  { route_id: 'r0000001-0000-0000-0000-000000000013', stop_id: 'b0000001-0000-0000-0000-000000000026', stop_sequence: 8, distance_from_start_km: 9.8, time_from_start_mins: 28, is_major_interchange: true },
+  { route_id: 'r0000001-0000-0000-0000-000000000013', stop_id: 'b0000001-0000-0000-0000-000000000025', stop_sequence: 9, distance_from_start_km: 11.5, time_from_start_mins: 32, is_major_interchange: true },
+
+  // -------------------------------------------------------------
+  // Route 1 (Return): Kunjathbail ➔ State Bank Direct
+  // -------------------------------------------------------------
+  { route_id: 'r0000001-0000-0000-0000-000000000014', stop_id: 'b0000001-0000-0000-0000-000000000025', stop_sequence: 1, distance_from_start_km: 0.0, time_from_start_mins: 0, is_major_interchange: true },
+  { route_id: 'r0000001-0000-0000-0000-000000000014', stop_id: 'b0000001-0000-0000-0000-000000000026', stop_sequence: 2, distance_from_start_km: 1.7, time_from_start_mins: 5, is_major_interchange: true },
+  { route_id: 'r0000001-0000-0000-0000-000000000014', stop_id: 'b0000001-0000-0000-0000-000000000006', stop_sequence: 3, distance_from_start_km: 4.3, time_from_start_mins: 12, is_major_interchange: true },
+  { route_id: 'r0000001-0000-0000-0000-000000000014', stop_id: 'b0000001-0000-0000-0000-000000000027', stop_sequence: 4, distance_from_start_km: 5.9, time_from_start_mins: 17, is_major_interchange: true },
+  { route_id: 'r0000001-0000-0000-0000-000000000014', stop_id: 'b0000001-0000-0000-0000-000000000031', stop_sequence: 5, distance_from_start_km: 7.0, time_from_start_mins: 20, is_major_interchange: false },
+  { route_id: 'r0000001-0000-0000-0000-000000000014', stop_id: 'b0000001-0000-0000-0000-000000000028', stop_sequence: 6, distance_from_start_km: 8.0, time_from_start_mins: 23, is_major_interchange: true },
+  { route_id: 'r0000001-0000-0000-0000-000000000014', stop_id: 'b0000001-0000-0000-0000-000000000030', stop_sequence: 7, distance_from_start_km: 9.3, time_from_start_mins: 26, is_major_interchange: false },
+  { route_id: 'r0000001-0000-0000-0000-000000000014', stop_id: 'b0000001-0000-0000-0000-000000000029', stop_sequence: 8, distance_from_start_km: 10.3, time_from_start_mins: 29, is_major_interchange: false },
+  { route_id: 'r0000001-0000-0000-0000-000000000014', stop_id: 'b0000001-0000-0000-0000-000000000001', stop_sequence: 9, distance_from_start_km: 11.5, time_from_start_mins: 32, is_major_interchange: true },
+
+  // -------------------------------------------------------------
+  // Route 13: State Bank ➔ Kunjathbail (via Bondel & Kavoor)
+  // -------------------------------------------------------------
+  { route_id: 'r0000001-0000-0000-0000-000000000015', stop_id: 'b0000001-0000-0000-0000-000000000001', stop_sequence: 1, distance_from_start_km: 0.0, time_from_start_mins: 0, is_major_interchange: true },
+  { route_id: 'r0000001-0000-0000-0000-000000000015', stop_id: 'b0000001-0000-0000-0000-000000000002', stop_sequence: 2, distance_from_start_km: 1.0, time_from_start_mins: 4, is_major_interchange: false },
+  { route_id: 'r0000001-0000-0000-0000-000000000015', stop_id: 'b0000001-0000-0000-0000-000000000004', stop_sequence: 3, distance_from_start_km: 3.2, time_from_start_mins: 10, is_major_interchange: false },
+  { route_id: 'r0000001-0000-0000-0000-000000000015', stop_id: 'b0000001-0000-0000-0000-000000000005', stop_sequence: 4, distance_from_start_km: 4.8, time_from_start_mins: 14, is_major_interchange: true },
+  { route_id: 'r0000001-0000-0000-0000-000000000015', stop_id: 'b0000001-0000-0000-0000-000000000032', stop_sequence: 5, distance_from_start_km: 7.2, time_from_start_mins: 20, is_major_interchange: true },
+  { route_id: 'r0000001-0000-0000-0000-000000000015', stop_id: 'b0000001-0000-0000-0000-000000000033', stop_sequence: 6, distance_from_start_km: 9.5, time_from_start_mins: 26, is_major_interchange: true },
+  { route_id: 'r0000001-0000-0000-0000-000000000015', stop_id: 'b0000001-0000-0000-0000-000000000026', stop_sequence: 7, distance_from_start_km: 11.2, time_from_start_mins: 31, is_major_interchange: true },
+  { route_id: 'r0000001-0000-0000-0000-000000000015', stop_id: 'b0000001-0000-0000-0000-000000000025', stop_sequence: 8, distance_from_start_km: 12.8, time_from_start_mins: 35, is_major_interchange: true },
+
+  // -------------------------------------------------------------
+  // Route 13 (Return): Kunjathbail ➔ State Bank (via Bondel & KSRTC)
+  // -------------------------------------------------------------
+  { route_id: 'r0000001-0000-0000-0000-000000000016', stop_id: 'b0000001-0000-0000-0000-000000000025', stop_sequence: 1, distance_from_start_km: 0.0, time_from_start_mins: 0, is_major_interchange: true },
+  { route_id: 'r0000001-0000-0000-0000-000000000016', stop_id: 'b0000001-0000-0000-0000-000000000026', stop_sequence: 2, distance_from_start_km: 1.6, time_from_start_mins: 5, is_major_interchange: true },
+  { route_id: 'r0000001-0000-0000-0000-000000000016', stop_id: 'b0000001-0000-0000-0000-000000000033', stop_sequence: 3, distance_from_start_km: 3.3, time_from_start_mins: 10, is_major_interchange: true },
+  { route_id: 'r0000001-0000-0000-0000-000000000016', stop_id: 'b0000001-0000-0000-0000-000000000032', stop_sequence: 4, distance_from_start_km: 5.6, time_from_start_mins: 16, is_major_interchange: true },
+  { route_id: 'r0000001-0000-0000-0000-000000000016', stop_id: 'b0000001-0000-0000-0000-000000000005', stop_sequence: 5, distance_from_start_km: 8.0, time_from_start_mins: 22, is_major_interchange: true },
+  { route_id: 'r0000001-0000-0000-0000-000000000016', stop_id: 'b0000001-0000-0000-0000-000000000004', stop_sequence: 6, distance_from_start_km: 9.6, time_from_start_mins: 26, is_major_interchange: false },
+  { route_id: 'r0000001-0000-0000-0000-000000000016', stop_id: 'b0000001-0000-0000-0000-000000000002', stop_sequence: 7, distance_from_start_km: 11.8, time_from_start_mins: 31, is_major_interchange: false },
+  { route_id: 'r0000001-0000-0000-0000-000000000016', stop_id: 'b0000001-0000-0000-0000-000000000001', stop_sequence: 8, distance_from_start_km: 12.8, time_from_start_mins: 35, is_major_interchange: true },
+
+  // -------------------------------------------------------------
+  // Route 2: State Bank ➔ Mukka Srinivas (via Baikampady & Surathkal)
+  // -------------------------------------------------------------
+  { route_id: 'r0000001-0000-0000-0000-000000000017', stop_id: 'b0000001-0000-0000-0000-000000000001', stop_sequence: 1, distance_from_start_km: 0.0, time_from_start_mins: 0, is_major_interchange: true },
+  { route_id: 'r0000001-0000-0000-0000-000000000017', stop_id: 'b0000001-0000-0000-0000-000000000004', stop_sequence: 2, distance_from_start_km: 3.5, time_from_start_mins: 10, is_major_interchange: false },
+  { route_id: 'r0000001-0000-0000-0000-000000000017', stop_id: 'b0000001-0000-0000-0000-000000000006', stop_sequence: 3, distance_from_start_km: 7.5, time_from_start_mins: 20, is_major_interchange: true },
+  { route_id: 'r0000001-0000-0000-0000-000000000017', stop_id: 'b0000001-0000-0000-0000-000000000007', stop_sequence: 4, distance_from_start_km: 10.2, time_from_start_mins: 26, is_major_interchange: false },
+  { route_id: 'r0000001-0000-0000-0000-000000000017', stop_id: 'b0000001-0000-0000-0000-000000000009', stop_sequence: 5, distance_from_start_km: 15.5, time_from_start_mins: 36, is_major_interchange: false },
+  { route_id: 'r0000001-0000-0000-0000-000000000017', stop_id: 'b0000001-0000-0000-0000-000000000010', stop_sequence: 6, distance_from_start_km: 18.5, time_from_start_mins: 40, is_major_interchange: true },
+  { route_id: 'r0000001-0000-0000-0000-000000000017', stop_id: 'b0000001-0000-0000-0000-000000000011', stop_sequence: 7, distance_from_start_km: 21.0, time_from_start_mins: 44, is_major_interchange: true },
+  { route_id: 'r0000001-0000-0000-0000-000000000017', stop_id: 'b0000001-0000-0000-0000-000000000038', stop_sequence: 8, distance_from_start_km: 24.5, time_from_start_mins: 50, is_major_interchange: true },
+
+  // -------------------------------------------------------------
+  // Route 3B: State Bank ➔ Vamanjoor SJEC (via Bunts Hostel, Mallikatta, Nanthoor)
+  // -------------------------------------------------------------
+  { route_id: 'r0000001-0000-0000-0000-000000000018', stop_id: 'b0000001-0000-0000-0000-000000000001', stop_sequence: 1, distance_from_start_km: 0.0, time_from_start_mins: 0, is_major_interchange: true },
+  { route_id: 'r0000001-0000-0000-0000-000000000018', stop_id: 'b0000001-0000-0000-0000-000000000002', stop_sequence: 2, distance_from_start_km: 1.0, time_from_start_mins: 4, is_major_interchange: false },
+  { route_id: 'r0000001-0000-0000-0000-000000000018', stop_id: 'b0000001-0000-0000-0000-000000000003', stop_sequence: 3, distance_from_start_km: 2.5, time_from_start_mins: 8, is_major_interchange: false },
+  { route_id: 'r0000001-0000-0000-0000-000000000018', stop_id: 'b0000001-0000-0000-0000-000000000020', stop_sequence: 4, distance_from_start_km: 4.0, time_from_start_mins: 12, is_major_interchange: true },
+  { route_id: 'r0000001-0000-0000-0000-000000000018', stop_id: 'b0000001-0000-0000-0000-000000000035', stop_sequence: 5, distance_from_start_km: 5.8, time_from_start_mins: 16, is_major_interchange: true },
+  { route_id: 'r0000001-0000-0000-0000-000000000018', stop_id: 'b0000001-0000-0000-0000-000000000036', stop_sequence: 6, distance_from_start_km: 11.0, time_from_start_mins: 28, is_major_interchange: true },
+
+  // -------------------------------------------------------------
+  // Route 27B: State Bank ➔ Mangaladevi Temple Direct
+  // -------------------------------------------------------------
+  { route_id: 'r0000001-0000-0000-0000-000000000019', stop_id: 'b0000001-0000-0000-0000-000000000001', stop_sequence: 1, distance_from_start_km: 0.0, time_from_start_mins: 0, is_major_interchange: true },
+  { route_id: 'r0000001-0000-0000-0000-000000000019', stop_id: 'b0000001-0000-0000-0000-000000000021', stop_sequence: 2, distance_from_start_km: 1.2, time_from_start_mins: 4, is_major_interchange: true },
+  { route_id: 'r0000001-0000-0000-0000-000000000019', stop_id: 'b0000001-0000-0000-0000-000000000037', stop_sequence: 3, distance_from_start_km: 3.5, time_from_start_mins: 12, is_major_interchange: true },
+
+  // -------------------------------------------------------------
+  // Route 45: State Bank ➔ Katipalla Kaikamba
+  // -------------------------------------------------------------
+  { route_id: 'r0000001-0000-0000-0000-000000000020', stop_id: 'b0000001-0000-0000-0000-000000000001', stop_sequence: 1, distance_from_start_km: 0.0, time_from_start_mins: 0, is_major_interchange: true },
+  { route_id: 'r0000001-0000-0000-0000-000000000020', stop_id: 'b0000001-0000-0000-0000-000000000004', stop_sequence: 2, distance_from_start_km: 3.5, time_from_start_mins: 10, is_major_interchange: false },
+  { route_id: 'r0000001-0000-0000-0000-000000000020', stop_id: 'b0000001-0000-0000-0000-000000000006', stop_sequence: 3, distance_from_start_km: 7.5, time_from_start_mins: 20, is_major_interchange: true },
+  { route_id: 'r0000001-0000-0000-0000-000000000020', stop_id: 'b0000001-0000-0000-0000-000000000009', stop_sequence: 4, distance_from_start_km: 15.5, time_from_start_mins: 34, is_major_interchange: false },
+  { route_id: 'r0000001-0000-0000-0000-000000000020', stop_id: 'b0000001-0000-0000-0000-000000000010', stop_sequence: 5, distance_from_start_km: 18.5, time_from_start_mins: 39, is_major_interchange: true },
+  { route_id: 'r0000001-0000-0000-0000-000000000020', stop_id: 'b0000001-0000-0000-0000-000000000039', stop_sequence: 6, distance_from_start_km: 22.0, time_from_start_mins: 46, is_major_interchange: true },
+
+  // -------------------------------------------------------------
+  // Route 1A: State Bank ➔ Thannirbhavi Beach Gate
+  // -------------------------------------------------------------
+  { route_id: 'r0000001-0000-0000-0000-000000000021', stop_id: 'b0000001-0000-0000-0000-000000000001', stop_sequence: 1, distance_from_start_km: 0.0, time_from_start_mins: 0, is_major_interchange: true },
+  { route_id: 'r0000001-0000-0000-0000-000000000021', stop_id: 'b0000001-0000-0000-0000-000000000028', stop_sequence: 2, distance_from_start_km: 3.5, time_from_start_mins: 10, is_major_interchange: true },
+  { route_id: 'r0000001-0000-0000-0000-000000000021', stop_id: 'b0000001-0000-0000-0000-000000000007', stop_sequence: 3, distance_from_start_km: 7.8, time_from_start_mins: 20, is_major_interchange: false },
+  { route_id: 'r0000001-0000-0000-0000-000000000021', stop_id: 'b0000001-0000-0000-0000-000000000040', stop_sequence: 4, distance_from_start_km: 10.5, time_from_start_mins: 25, is_major_interchange: true },
+
+  // -------------------------------------------------------------
+  // Route 19B: State Bank ➔ Bondel (via Ladyhill, Urwa Stores, Kavoor)
+  // -------------------------------------------------------------
+  { route_id: 'r0000001-0000-0000-0000-000000000022', stop_id: 'b0000001-0000-0000-0000-000000000001', stop_sequence: 1, distance_from_start_km: 0.0, time_from_start_mins: 0, is_major_interchange: true },
+  { route_id: 'r0000001-0000-0000-0000-000000000022', stop_id: 'b0000001-0000-0000-0000-000000000028', stop_sequence: 2, distance_from_start_km: 3.5, time_from_start_mins: 10, is_major_interchange: true },
+  { route_id: 'r0000001-0000-0000-0000-000000000022', stop_id: 'b0000001-0000-0000-0000-000000000027', stop_sequence: 3, distance_from_start_km: 5.6, time_from_start_mins: 16, is_major_interchange: true },
+  { route_id: 'r0000001-0000-0000-0000-000000000022', stop_id: 'b0000001-0000-0000-0000-000000000006', stop_sequence: 4, distance_from_start_km: 7.2, time_from_start_mins: 21, is_major_interchange: true },
+  { route_id: 'r0000001-0000-0000-0000-000000000022', stop_id: 'b0000001-0000-0000-0000-000000000026', stop_sequence: 5, distance_from_start_km: 9.8, time_from_start_mins: 26, is_major_interchange: true },
+  { route_id: 'r0000001-0000-0000-0000-000000000022', stop_id: 'b0000001-0000-0000-0000-000000000033', stop_sequence: 6, distance_from_start_km: 11.8, time_from_start_mins: 30, is_major_interchange: true }
 ];
 
 // Timetable Schedules for Mangalore Buses
@@ -539,7 +982,25 @@ export const initialSchedules = [
   { id: 's09', route_id: 'r0000001-0000-0000-0000-000000000009', departure_time: '05:30:00', arrival_time: '23:30:00', frequency_mins: 10, bus_plate_number: 'KA-19-AK-2222' },
   { id: 's10', route_id: 'r0000001-0000-0000-0000-000000000010', departure_time: '06:45:00', arrival_time: '21:00:00', frequency_mins: 15, bus_plate_number: 'KA-19-AL-3333' },
   { id: 's11', route_id: 'r0000001-0000-0000-0000-000000000011', departure_time: '07:00:00', arrival_time: '20:30:00', frequency_mins: 20, bus_plate_number: 'KA-19-AM-1616' },
-  { id: 's12', route_id: 'r0000001-0000-0000-0000-000000000012', departure_time: '07:30:00', arrival_time: '20:00:00', frequency_mins: 20, bus_plate_number: 'KA-19-AN-4747' }
+  { id: 's12', route_id: 'r0000001-0000-0000-0000-000000000012', departure_time: '07:30:00', arrival_time: '20:00:00', frequency_mins: 20, bus_plate_number: 'KA-19-AN-4747' },
+  // Route 1 (Kunjathbail)
+  { id: 's13', route_id: 'r0000001-0000-0000-0000-000000000013', departure_time: '06:00:00', arrival_time: '22:15:00', frequency_mins: 10, bus_plate_number: 'KA-19-C-0101' },
+  { id: 's14', route_id: 'r0000001-0000-0000-0000-000000000014', departure_time: '06:15:00', arrival_time: '22:30:00', frequency_mins: 10, bus_plate_number: 'KA-19-C-0102' },
+  // Route 13 (Bondel-Kavoor-Kunjathbail)
+  { id: 's15', route_id: 'r0000001-0000-0000-0000-000000000015', departure_time: '06:10:00', arrival_time: '22:00:00', frequency_mins: 12, bus_plate_number: 'KA-19-C-1313' },
+  { id: 's16', route_id: 'r0000001-0000-0000-0000-000000000016', departure_time: '06:25:00', arrival_time: '22:15:00', frequency_mins: 12, bus_plate_number: 'KA-19-C-1314' },
+  // Route 2 (Mukka)
+  { id: 's17', route_id: 'r0000001-0000-0000-0000-000000000017', departure_time: '06:00:00', arrival_time: '22:00:00', frequency_mins: 15, bus_plate_number: 'KA-19-C-0202' },
+  // Route 3B (Vamanjoor)
+  { id: 's18', route_id: 'r0000001-0000-0000-0000-000000000018', departure_time: '06:30:00', arrival_time: '21:30:00', frequency_mins: 10, bus_plate_number: 'KA-19-C-0303' },
+  // Route 27B (Mangaladevi)
+  { id: 's19', route_id: 'r0000001-0000-0000-0000-000000000019', departure_time: '06:00:00', arrival_time: '22:30:00', frequency_mins: 10, bus_plate_number: 'KA-19-C-2727' },
+  // Route 45 (Katipalla)
+  { id: 's20', route_id: 'r0000001-0000-0000-0000-000000000020', departure_time: '06:15:00', arrival_time: '21:45:00', frequency_mins: 15, bus_plate_number: 'KA-19-C-4545' },
+  // Route 1A (Thannirbhavi)
+  { id: 's21', route_id: 'r0000001-0000-0000-0000-000000000021', departure_time: '07:00:00', arrival_time: '20:30:00', frequency_mins: 30, bus_plate_number: 'KA-19-C-0111' },
+  // Route 19B (Bondel)
+  { id: 's22', route_id: 'r0000001-0000-0000-0000-000000000022', departure_time: '06:30:00', arrival_time: '21:30:00', frequency_mins: 15, bus_plate_number: 'KA-19-C-1919' }
 ];
 
 // Authentic Fare Stages in Mangalore (Full & Student Concession 50%)
@@ -588,5 +1049,31 @@ export const initialFares = [
   { id: 'f21', route_id: 'r0000001-0000-0000-0000-000000000011', from_stop_id: 'b0000001-0000-0000-0000-000000000006', to_stop_id: 'b0000001-0000-0000-0000-000000000011', regular_fare: 35.00, student_fare: 18.00 },
 
   // Route 47: Deralakatte ➔ Mudipu IT SEZ
-  { id: 'f22', route_id: 'r0000001-0000-0000-0000-000000000012', from_stop_id: 'b0000001-0000-0000-0000-000000000015', to_stop_id: 'b0000001-0000-0000-0000-000000000018', regular_fare: 25.00, student_fare: 12.00 }
+  { id: 'f22', route_id: 'r0000001-0000-0000-0000-000000000012', from_stop_id: 'b0000001-0000-0000-0000-000000000015', to_stop_id: 'b0000001-0000-0000-0000-000000000018', regular_fare: 25.00, student_fare: 12.00 },
+
+  // Route 1: State Bank ➔ Kunjathbail / Kunjethbail
+  { id: 'f23', route_id: 'r0000001-0000-0000-0000-000000000013', from_stop_id: 'b0000001-0000-0000-0000-000000000001', to_stop_id: 'b0000001-0000-0000-0000-000000000025', regular_fare: 25.00, student_fare: 12.00 },
+  { id: 'f24', route_id: 'r0000001-0000-0000-0000-000000000013', from_stop_id: 'b0000001-0000-0000-0000-000000000001', to_stop_id: 'b0000001-0000-0000-0000-000000000026', regular_fare: 22.00, student_fare: 11.00 },
+  { id: 'f25', route_id: 'r0000001-0000-0000-0000-000000000013', from_stop_id: 'b0000001-0000-0000-0000-000000000001', to_stop_id: 'b0000001-0000-0000-0000-000000000028', regular_fare: 15.00, student_fare: 8.00 },
+  { id: 'f26', route_id: 'r0000001-0000-0000-0000-000000000013', from_stop_id: 'b0000001-0000-0000-0000-000000000026', to_stop_id: 'b0000001-0000-0000-0000-000000000025', regular_fare: 10.00, student_fare: 5.00 },
+
+  // Route 1 (Return): Kunjathbail ➔ State Bank
+  { id: 'f27', route_id: 'r0000001-0000-0000-0000-000000000014', from_stop_id: 'b0000001-0000-0000-0000-000000000025', to_stop_id: 'b0000001-0000-0000-0000-000000000001', regular_fare: 25.00, student_fare: 12.00 },
+  { id: 'f28', route_id: 'r0000001-0000-0000-0000-000000000014', from_stop_id: 'b0000001-0000-0000-0000-000000000025', to_stop_id: 'b0000001-0000-0000-0000-000000000028', regular_fare: 18.00, student_fare: 9.00 },
+  { id: 'f29', route_id: 'r0000001-0000-0000-0000-000000000014', from_stop_id: 'b0000001-0000-0000-0000-000000000025', to_stop_id: 'b0000001-0000-0000-0000-000000000006', regular_fare: 15.00, student_fare: 8.00 },
+
+  // Route 13: State Bank ➔ Kunjathbail (via Bondel)
+  { id: 'f30', route_id: 'r0000001-0000-0000-0000-000000000015', from_stop_id: 'b0000001-0000-0000-0000-000000000001', to_stop_id: 'b0000001-0000-0000-0000-000000000025', regular_fare: 28.00, student_fare: 14.00 },
+  { id: 'f31', route_id: 'r0000001-0000-0000-0000-000000000015', from_stop_id: 'b0000001-0000-0000-0000-000000000001', to_stop_id: 'b0000001-0000-0000-0000-000000000033', regular_fare: 22.00, student_fare: 11.00 },
+  // Route 13 (Return): Kunjathbail ➔ State Bank
+  { id: 'f32', route_id: 'r0000001-0000-0000-0000-000000000016', from_stop_id: 'b0000001-0000-0000-0000-000000000025', to_stop_id: 'b0000001-0000-0000-0000-000000000001', regular_fare: 28.00, student_fare: 14.00 },
+
+  // Route 2: State Bank ➔ Mukka
+  { id: 'f33', route_id: 'r0000001-0000-0000-0000-000000000017', from_stop_id: 'b0000001-0000-0000-0000-000000000001', to_stop_id: 'b0000001-0000-0000-0000-000000000038', regular_fare: 55.00, student_fare: 28.00 },
+
+  // Route 3B: State Bank ➔ Vamanjoor SJEC
+  { id: 'f34', route_id: 'r0000001-0000-0000-0000-000000000018', from_stop_id: 'b0000001-0000-0000-0000-000000000001', to_stop_id: 'b0000001-0000-0000-0000-000000000036', regular_fare: 28.00, student_fare: 14.00 },
+
+  // Route 27B: State Bank ➔ Mangaladevi
+  { id: 'f35', route_id: 'r0000001-0000-0000-0000-000000000019', from_stop_id: 'b0000001-0000-0000-0000-000000000001', to_stop_id: 'b0000001-0000-0000-0000-000000000037', regular_fare: 15.00, student_fare: 8.00 }
 ];
