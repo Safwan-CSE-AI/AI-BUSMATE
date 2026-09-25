@@ -11,8 +11,8 @@ export const initialStops = [
     name: 'State Bank (Service Bus Stand)',
     locality: 'State Bank Central',
     landmark: 'Opposite DC Office & Town Hall, Nehru Maidan',
-    latitude: 12.8654,
-    longitude: 74.8425,
+    latitude: 12.8617,
+    longitude: 74.8390,
     wheelchair_accessible: true,
     is_active: true
   },
@@ -22,8 +22,8 @@ export const initialStops = [
     name: 'Hampankatta Circle',
     locality: 'Hampankatta',
     landmark: 'Milagres Junction & Clock Tower',
-    latitude: 12.8698,
-    longitude: 74.8451,
+    latitude: 12.8692,
+    longitude: 74.8436,
     wheelchair_accessible: true,
     is_active: true
   },
@@ -44,8 +44,8 @@ export const initialStops = [
     name: 'Lalbagh (City Corporation)',
     locality: 'Lalbagh',
     landmark: 'Beside Mangaluru City Corporation & Saibeen Complex',
-    latitude: 12.8832,
-    longitude: 74.8412,
+    latitude: 12.8837,
+    longitude: 74.8420,
     wheelchair_accessible: true,
     is_active: true
   },
@@ -55,8 +55,8 @@ export const initialStops = [
     name: 'KSRTC Bus Stand Bejai',
     locality: 'Bejai',
     landmark: 'KSRTC Main Inter-city Concourse Gate 1',
-    latitude: 12.8895,
-    longitude: 74.8492,
+    latitude: 12.8890,
+    longitude: 74.8488,
     wheelchair_accessible: true,
     is_active: true
   },
@@ -66,8 +66,8 @@ export const initialStops = [
     name: 'Kottara Chowki',
     locality: 'Kottara',
     landmark: 'National Highway 66 Flyover Interchange',
-    latitude: 12.9056,
-    longitude: 74.8329,
+    latitude: 12.9052,
+    longitude: 74.8325,
     wheelchair_accessible: true,
     is_active: true
   },
@@ -277,8 +277,8 @@ export const initialStops = [
     name: 'Kunjathbail / Kunjethbail (Main Bus Stand)',
     locality: 'Kunjathbail / Kunjethbail',
     landmark: 'Near Kunjathbail Ganesha Temple & Main Bus Shelter',
-    latitude: 12.9345,
-    longitude: 74.8562,
+    latitude: 12.9355,
+    longitude: 74.8565,
     wheelchair_accessible: true,
     is_active: true
   },
@@ -300,7 +300,7 @@ export const initialStops = [
     locality: 'Urwa Stores',
     landmark: 'Urwa Market & Canara High School',
     latitude: 12.8980,
-    longitude: 74.8350,
+    longitude: 74.8345,
     wheelchair_accessible: true,
     is_active: true
   },
@@ -321,7 +321,7 @@ export const initialStops = [
     name: 'Car Street (Sri Venkataramana Temple)',
     locality: 'Car Street',
     landmark: 'Historic Temple Square & Flower Market',
-    latitude: 12.8712,
+    latitude: 12.8708,
     longitude: 74.8385,
     wheelchair_accessible: true,
     is_active: true
@@ -343,7 +343,7 @@ export const initialStops = [
     name: 'Chilimbi Junction',
     locality: 'Chilimbi',
     landmark: 'Chilimbi Bus Shelter & City Hospital Annexe',
-    latitude: 12.8920,
+    latitude: 12.8928,
     longitude: 74.8335,
     wheelchair_accessible: true,
     is_active: true
@@ -354,8 +354,8 @@ export const initialStops = [
     name: 'Derebail Church / Konchady',
     locality: 'Derebail / Konchady',
     landmark: 'Derebail Most Holy Redeemer Church & Airport Road',
-    latitude: 12.9120,
-    longitude: 74.8480,
+    latitude: 12.9125,
+    longitude: 74.8475,
     wheelchair_accessible: true,
     is_active: true
   },
