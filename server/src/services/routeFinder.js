@@ -135,6 +135,20 @@ export async function findBusRoutes({
       return s ? s.name : 'Stop';
     });
 
+    const stopDetails = intermediateStopsObjs.map(rs => {
+      const s = allStops.find(stop => stop.id === rs.stop_id);
+      return {
+        id: s?.id,
+        name: s?.name || 'Stop',
+        code: s?.code,
+        locality: s?.locality,
+        landmark: s?.landmark,
+        latitude: s?.latitude,
+        longitude: s?.longitude,
+        isMajorInterchange: rs.is_major_interchange
+      };
+    });
+
     const dist = Math.max(0.8, Number(Math.abs(rStops[tIdx].distance_from_start_km - rStops[fIdx].distance_from_start_km).toFixed(1)));
     const duration = Math.max(8, Math.abs(rStops[tIdx].time_from_start_mins - rStops[fIdx].time_from_start_mins) || Math.round(dist * 2.5));
     const fareInfo = getSegmentFare(route.id, fromStopId, toStopId, dist);
@@ -147,6 +161,7 @@ export async function findBusRoutes({
       isReverse,
       intermediateObjs: intermediateStopsObjs,
       intermediateNames,
+      stopDetails,
       dist,
       duration,
       fareInfo,
@@ -182,6 +197,7 @@ export async function findBusRoutes({
       studentFare: leg.fareInfo.student,
       stopsCount: leg.stopsCount,
       intermediateStops: leg.intermediateNames,
+      stopDetails: leg.stopDetails,
       instructions: `Board Bus ${busLabel} (${route.bus_type}) towards ${leg.headingTowards} at ${originStop.name}. Ride ${leg.stopsCount} stops directly and alight at ${destStop.name}.`,
       steps: [
         {
@@ -219,6 +235,7 @@ export async function findBusRoutes({
           from: originStop.name,
           to: destStop.name,
           stops: leg.intermediateNames,
+          stopDetails: leg.stopDetails,
           durationMinutes: leg.duration,
           fare: appliedFare
         }
@@ -276,6 +293,7 @@ export async function findBusRoutes({
             studentFare: totalStuFare,
             stopsCount: leg1.stopsCount + leg2.stopsCount,
             intermediateStops: [...leg1.intermediateNames, ...leg2.intermediateNames.slice(1)],
+            stopDetails: [...leg1.stopDetails, ...leg2.stopDetails.slice(1)],
             instructions: `Board Bus ${routeA.route_number} at ${originStop.name} to ${transferStopObj.name}. Change at ${transferStopObj.name} to Bus ${routeB.route_number} towards ${destStop.name}.`,
             steps: [
               {
@@ -333,6 +351,7 @@ export async function findBusRoutes({
                 from: originStop.name,
                 to: transferStopObj.name,
                 stops: leg1.intermediateNames,
+                stopDetails: leg1.stopDetails,
                 durationMinutes: leg1.duration,
                 fare: isStudent ? leg1.fareInfo.student : leg1.fareInfo.regular
               },
@@ -342,6 +361,7 @@ export async function findBusRoutes({
                 from: transferStopObj.name,
                 to: destStop.name,
                 stops: leg2.intermediateNames,
+                stopDetails: leg2.stopDetails,
                 durationMinutes: leg2.duration,
                 fare: isStudent ? leg2.fareInfo.student : leg2.fareInfo.regular
               }

@@ -143,7 +143,9 @@ export const dbService = {
             stop_name: rs.bus_stops?.name || 'Stop',
             locality: rs.bus_stops?.locality,
             landmark: rs.bus_stops?.landmark,
-            code: rs.bus_stops?.code
+            code: rs.bus_stops?.code,
+            latitude: rs.bus_stops?.latitude,
+            longitude: rs.bus_stops?.longitude
           }));
         }
       } catch (e) {
@@ -161,7 +163,9 @@ export const dbService = {
         stop_name: stop?.name || 'Stop',
         locality: stop?.locality,
         landmark: stop?.landmark,
-        code: stop?.code
+        code: stop?.code,
+        latitude: stop?.latitude,
+        longitude: stop?.longitude
       };
     });
   },

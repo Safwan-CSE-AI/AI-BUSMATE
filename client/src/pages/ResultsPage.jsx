@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useSearchParams, Link, useNavigate } from 'react-router-dom';
 import { 
   Bus, 
@@ -12,9 +12,13 @@ import {
   SlidersHorizontal,
   Bookmark,
   CheckCircle2,
-  RefreshCw
+  RefreshCw,
+  MapPin,
+  Layers
 } from 'lucide-react';
 import RouteCard from '../components/RouteCard';
+import RouteTimeline from '../components/RouteTimeline';
+import TransitMap from '../components/TransitMap';
 import LoadingSpinner from '../components/LoadingSpinner';
 import EmptyState from '../components/EmptyState';
 import api from '../services/api';
@@ -34,6 +38,9 @@ export default function ResultsPage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
   const [data, setData] = useState(null);
+  const [activeMapRoute, setActiveMapRoute] = useState(null);
+  const [showMap, setShowMap] = useState(true);
+  const mapSectionRef = useRef(null);
 
   useEffect(() => {
     async function fetchRouteResults() {
@@ -58,6 +65,7 @@ export default function ResultsPage() {
 
         if (res.data?.success) {
           setData(res.data);
+          setActiveMapRoute(res.data.recommendation);
         } else {
           setError(res.data?.error || 'No verified bus routes found.');
         }
@@ -70,6 +78,12 @@ export default function ResultsPage() {
 
     fetchRouteResults();
   }, [fromStopId, toStopId, preference, maxTransfers, isStudent, travelDate, travelTime]);
+
+  const handleSelectRouteOnMap = (route) => {
+    setActiveMapRoute(route);
+    setShowMap(true);
+    mapSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
 
   if (loading) {
     return (
@@ -161,11 +175,46 @@ export default function ResultsPage() {
         </div>
       )}
 
+      {/* Interactive Transit Map Section */}
+      <section ref={mapSectionRef} className="space-y-3">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <div className="w-6 h-6 rounded-lg bg-emerald-600 text-white flex items-center justify-center font-bold text-xs shadow-xs">
+              <MapPin className="w-3.5 h-3.5" />
+            </div>
+            <h2 className="text-lg font-black text-slate-900 tracking-tight">Interactive Transit Map</h2>
+          </div>
+          <div className="flex items-center gap-3">
+            {activeMapRoute && (
+              <span className="text-xs text-slate-500 font-medium hidden sm:inline">
+                Currently plotted: <strong className="text-slate-800">{activeMapRoute.bus ? `Bus ${activeMapRoute.bus}` : 'Recommended Line'}</strong>
+              </span>
+            )}
+            <button
+              type="button"
+              onClick={() => setShowMap(!showMap)}
+              className="text-xs font-bold text-blue-600 hover:text-blue-700 bg-blue-50 px-3 py-1 rounded-xl border border-blue-100 transition-colors"
+            >
+              {showMap ? 'Hide Map' : 'Show Map'}
+            </button>
+          </div>
+        </div>
+
+        {showMap && (
+          <TransitMap
+            route={activeMapRoute || recommendation}
+            originName={origin?.name}
+            destName={destination?.name}
+            height="420px"
+          />
+        )}
+      </section>
+
       {/* Recommended Route Section */}
       <section className="space-y-3">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <div className="w-6 h-6 rounded-lg bg-blue-600 text-white flex items-center justify-center font-bold text-xs">
+            <div className="w-6 h-6 rounded-lg bg-blue-600 text-white flex items-center justify-center font-bold text-xs shadow-xs">
               ★
             </div>
             <h2 className="text-lg font-black text-slate-900 tracking-tight">Best Recommended Route</h2>
@@ -180,6 +229,8 @@ export default function ResultsPage() {
             destinationStopId: toStopId
           }}
           isRecommended={true}
+          isSelectedOnMap={activeMapRoute?.id === recommendation.id}
+          onSelectMap={() => handleSelectRouteOnMap(recommendation)}
           originName={origin?.name}
           destName={destination?.name}
         />
@@ -187,12 +238,12 @@ export default function ResultsPage() {
 
       {/* Alternative Routes Section */}
       {alternatives.length > 0 && (
-        <section className="space-y-4 pt-6">
+        <section className="space-y-4 pt-4">
           <div className="flex items-center justify-between">
             <h3 className="text-lg font-extrabold text-slate-900">
               Alternative Verified Routes ({alternatives.length})
             </h3>
-            <p className="text-xs text-slate-500">Other valid options connecting these stops</p>
+            <p className="text-xs text-slate-500">Other valid transit options</p>
           </div>
 
           <div className="space-y-4">
@@ -205,6 +256,8 @@ export default function ResultsPage() {
                   destinationStopId: toStopId
                 }}
                 isRecommended={false}
+                isSelectedOnMap={activeMapRoute?.id === alt.id}
+                onSelectMap={() => handleSelectRouteOnMap(alt)}
                 originName={origin?.name}
                 destName={destination?.name}
               />

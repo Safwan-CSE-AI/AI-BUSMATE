@@ -25,6 +25,8 @@ export default function RouteCard({
   route, 
   isRecommended = false, 
   onSaveFavorite,
+  onSelectMap,
+  isSelectedOnMap = false,
   originName,
   destName 
 }) {
@@ -202,6 +204,23 @@ export default function RouteCard({
           </button>
 
           <div className="flex items-center gap-2">
+            {/* View on Map Button */}
+            {onSelectMap && (
+              <button
+                type="button"
+                onClick={onSelectMap}
+                className={`flex items-center gap-1.5 px-3 py-1.5 text-xs font-bold rounded-xl transition-all border ${
+                  isSelectedOnMap
+                    ? 'bg-blue-600 text-white border-blue-600 shadow-xs'
+                    : 'bg-blue-50 text-blue-700 border-blue-200/80 hover:bg-blue-100'
+                }`}
+                title="Plot this route on the interactive transit map"
+              >
+                <MapPin className="w-3.5 h-3.5" />
+                {isSelectedOnMap ? 'Viewing on Map' : 'View on Map'}
+              </button>
+            )}
+
             {/* View Route Schedule Link if single route */}
             {route.routeId && !route.routeId.includes('_') && (
               <Link

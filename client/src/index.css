@@ -74,3 +74,33 @@
 .animate-bus-pulse {
   animation: bus-pulse 2s infinite ease-in-out;
 }
+
+/* Custom Leaflet Styling */
+.leaflet-popup-content-wrapper {
+  border-radius: 1.25rem !important;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04) !important;
+  border: 1px solid rgba(226, 232, 240, 0.9) !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+}
+
+.leaflet-popup-content {
+  margin: 0 !important;
+  line-height: 1.4 !important;
+}
+
+.leaflet-container {
+  font-family: inherit !important;
+}
+
+.leaflet-control-zoom a {
+  border-radius: 0.75rem !important;
+  border: 1px solid #e2e8f0 !important;
+  color: #334155 !important;
+}
+
+.custom-map-marker,
+.custom-network-marker {
+  background: transparent !important;
+  border: none !important;
+}

@@ -10,9 +10,11 @@ import {
   ArrowRight, 
   GraduationCap, 
   SlidersHorizontal,
-  Compass
+  Compass,
+  MapPin
 } from 'lucide-react';
 import StopSelect from '../components/StopSelect';
+import NetworkMapModal from '../components/NetworkMapModal';
 import { useAuth } from '../context/AuthContext';
 import api from '../services/api';
 
@@ -22,6 +24,7 @@ export default function SearchPage() {
   const { user } = useAuth();
 
   const [stops, setStops] = useState([]);
+  const [mapModalOpen, setMapModalOpen] = useState(false);
   const [fromStop, setFromStop] = useState(searchParams.get('from') || '');
   const [toStop, setToStop] = useState(searchParams.get('to') || '');
   const [travelDate, setTravelDate] = useState(() => new Date().toISOString().split('T')[0]);
@@ -114,6 +117,19 @@ export default function SearchPage() {
 
         <form onSubmit={handleSearch} className="space-y-6">
           
+          {/* Header Row with Map Picker Trigger */}
+          <div className="flex items-center justify-between pb-1">
+            <span className="text-xs font-bold text-slate-700 uppercase tracking-wider">Select Stations</span>
+            <button
+              type="button"
+              onClick={() => setMapModalOpen(true)}
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-blue-50 hover:bg-blue-100 text-blue-700 font-bold text-xs transition-colors border border-blue-200/80 shadow-2xs"
+            >
+              <MapPin className="w-3.5 h-3.5 text-blue-600" />
+              <span>Explore Network Map ({stops.length} Stops)</span>
+            </button>
+          </div>
+
           {/* Stops Selection with Swap */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 relative">
             <div>
@@ -275,6 +291,17 @@ export default function SearchPage() {
         </form>
 
       </div>
+
+      {/* Network Map Interactive Modal */}
+      <NetworkMapModal
+        isOpen={mapModalOpen}
+        onClose={() => setMapModalOpen(false)}
+        stops={stops}
+        currentFromId={fromStop}
+        currentToId={toStop}
+        onSelectFrom={setFromStop}
+        onSelectTo={setToStop}
+      />
     </div>
   );
 }

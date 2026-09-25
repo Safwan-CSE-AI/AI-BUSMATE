@@ -15,6 +15,7 @@ import {
 } from 'lucide-react';
 import LoadingSpinner from '../components/LoadingSpinner';
 import EmptyState from '../components/EmptyState';
+import TransitMap from '../components/TransitMap';
 import api from '../services/api';
 
 export default function RouteDetailPage() {
@@ -121,6 +122,23 @@ export default function RouteDetailPage() {
           </Link>
         </div>
       </div>
+
+      {/* Interactive Transit Map for Route */}
+      <section className="space-y-3">
+        <div className="flex items-center justify-between">
+          <h3 className="text-base font-extrabold text-slate-900 flex items-center gap-2">
+            <MapPin className="w-4 h-4 text-emerald-600" />
+            Route Geographic Path & Stop Locations
+          </h3>
+          <span className="text-xs text-slate-400 font-medium">Interactive Map</span>
+        </div>
+        <TransitMap
+          route={route}
+          originName={route.origin_stop_name}
+          destName={route.destination_stop_name}
+          height="380px"
+        />
+      </section>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         
